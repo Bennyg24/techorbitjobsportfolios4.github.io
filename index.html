@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Analyst Portfolio - Stella Daniels</title>
+    <style>
+        /* --- CSA Design: Dark, High-Contrast, Technical --- */
+        :root {
+            --csa-primary: #121212; /* Near Black */
+            --csa-secondary: #2C2C2C; /* Dark Gray Background */
+            --csa-accent: #00FF00; /* Lime Green (Hacker Aesthetic) */
+            --csa-text: #E0E0E0; /* Light Gray Text */
+            --csa-mono-font: 'Consolas', 'Courier New', monospace;
+        }
+
+        body {
+            font-family: var(--csa-mono-font);
+            line-height: 1.5;
+            color: var(--csa-text);
+            background: var(--csa-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--csa-accent);
+            transition: color 0.3s;
+        }
+
+        /* --- Navigation Bar --- */
+        .csa-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: var(--csa-secondary);
+            border-bottom: 2px solid var(--csa-accent);
+        }
+
+        .csa-nav .logo {
+            font-size: 1.5em;
+            color: var(--csa-accent);
+        }
+
+        .csa-nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .csa-nav ul li a {
+            margin-left: 20px;
+            color: var(--csa-text);
+        }
+
+        .csa-nav ul li a:hover {
+            color: var(--csa-accent);
+        }
+
+        /* --- Header/Hero Section --- */
+        .csa-header {
+            padding: 80px 5% 40px; /* Adjusted padding for image */
+            text-align: center;
+            background: var(--csa-primary); /* Keeping it simple, removed binary image for cleaner profile view */
+        }
+
+        .profile-img-container {
+            margin-bottom: 25px; /* Space below image */
+        }
+
+        .profile-img-container img {
+            width: 150px; /* Size of the circular image */
+            height: 150px;
+            border-radius: 50%; /* Makes it circular */
+            border: 3px solid var(--csa-accent); /* Border around the image */
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4); /* Glow effect for cyber theme */
+            object-fit: cover; /* Ensures image covers the circle without distortion */
+        }
+
+        /* Styling for the dynamic greeting */
+        #dynamicGreeting {
+            font-size: 1.2em;
+            color: var(--csa-text);
+            margin-bottom: 5px;
+        }
+
+        .csa-header h1 {
+            font-size: 3.2em;
+            color: white;
+            text-shadow: 0 0 10px var(--csa-accent);
+            margin-bottom: 5px;
+        }
+
+        .csa-header h2 {
+            font-size: 1.3em;
+            color: var(--csa-accent);
+            margin-bottom: 30px;
+        }
+
+        .csa-btn {
+            display: inline-block;
+            background: var(--csa-accent);
+            color: var(--csa-primary);
+            padding: 10px 25px;
+            border-radius: 2px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .csa-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* --- Skills Section --- */
+        .csa-section {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .csa-section h2 {
+            font-size: 2em;
+            color: var(--csa-accent);
+            margin-bottom: 30px;
+        }
+
+        .csa-skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .csa-skill-tag {
+            background: var(--csa-secondary);
+            color: var(--csa-text);
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            border: 1px solid var(--csa-secondary);
+            transition: border-color 0.3s;
+        }
+        
+        .csa-skill-tag:hover {
+            border-color: var(--csa-accent);
+        }
+
+        /* --- Projects Section --- */
+        .csa-projects-section {
+            background: var(--csa-secondary);
+        }
+
+        .csa-project-card {
+            background: var(--csa-primary);
+            border-radius: 6px;
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 800px;
+            text-align: left;
+            border-left: 5px solid var(--csa-accent);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+        }
+
+        .csa-project-card h3 {
+            color: var(--csa-accent);
+            margin-bottom: 10px;
+        }
+
+        .csa-project-card p {
+            color: var(--csa-text);
+            margin-bottom: 15px;
+        }
+
+        .csa-project-links a {
+            padding: 8px 15px;
+            margin-right: 10px;
+            border-radius: 2px;
+            font-size: 0.8em;
+            background: var(--csa-accent);
+            color: var(--csa-primary);
+            font-weight: bold;
+        }
+
+        /* --- Footer --- */
+        .csa-footer {
+            background: var(--csa-primary);
+            color: var(--csa-text);
+            text-align: center;
+            padding: 20px 5%;
+            border-top: 1px solid var(--csa-secondary);
+        }
+
+        .csa-footer a {
+            color: var(--csa-accent);
+            margin: 0 10px;
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 768px) {
+            .csa-nav {
+                flex-direction: column;
+            }
+            .csa-nav ul {
+                padding: 10px 0 0;
+            }
+            .csa-header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="csa-nav">
+        <div class="logo">CyberSec Portfolio</div>
+        <ul>
+            <li><a href="#about">ATTACK</a></li>
+            <li><a href="#skills">DEFENSE</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <header id="about" class="csa-header">
+        <div class="profile-img-container">
+            <img src="https://techorbitjobs.com/wp-content/uploads/2025/10/testimonial-9.webp" alt="Stella Daniels Profile Picture">
+        </div>
+
+        <div id="dynamicGreeting"></div>
+        
+        <h1>Welcome to my portfolio, I'm Stella Daniels</h1>
+        <h2>🔒 Threat Hunting | Incident Response | Vulnerability Management</h2>
+        <p>I focus on securing cloud infrastructure and enhancing security posture by integrating NIST frameworks and performing proactive analysis with strong expertise in threat detection, vulnerability management, SIEM monitoring, incident response, and cybersecurity risk mitigation. I am Skilled in using industry-standard tools including Splunk, Wireshark, Nessus, Security Onion, Microsoft Defender, and cloud security platforms. Adept at protecting enterprise infrastructure, analyzing cyber threats, and improving security posture across high-compliance environments.</p>
+        <a href="https://drive.google.com/file/d/1aFrzNSsIJvrwp775b0FqRmHDMTEeSvnq/view?usp=sharing" class="csa-btn" download>ACCESS MY RESUME</a>
+    </header>
+
+    <section id="skills" class="csa-section">
+        <h2>🛡️ Technical Competencies</h2>
+        <div class="csa-skills-grid">
+            <span class="csa-skill-tag">SIEM (Splunk, Sentinel)</span>
+            <span class="csa-skill-tag">Incident Response</span>
+            <span class="csa-skill-tag">Vulnerability Scanning (Nessus)</span>
+            <span class="csa-skill-tag">Network Security (Firewalls, IDS/IPS)</span>
+            <span class="csa-skill-tag">OSINT & Threat Intelligence</span>
+            <span class="csa-skill-tag">Python (Scripting)</span>
+            <span class="csa-skill-tag">Cloud Security (AWS/Azure)</span>
+            <span class="csa-skill-tag">Linux/Bash Scripting</span>
+        </div>
+    </section>
+
+    <section id="projects" class="csa-section csa-projects-section">
+        <h2>Projects // Case Studies</h2>
+
+        <div class="csa-project-card">
+            <h3>Case Study: Phishing Attack Simulation & Mitigation</h3>
+            <p>Conducted a simulated phishing campaign on a corporate domain. Documented the mean time to detection (MTTD) and developed Splunk queries to automate alert generation for future attacks, reducing MTTD by 40%.</p>
+            <div class="csa-project-links">
+                <a href="[Link to Incident Report PDF]" target="_blank">View IR Report</a>
+                <a href="[Link to Splunk Queries/Code]" target="_blank">GitHub Code</a>
+            </div>
+        </div>
+
+        <div class="csa-project-card">
+            <h3>Vulnerability Management & Patch Prioritization</h3>
+            <p>Used Nessus to scan a simulated network of 50 machines. Prioritized patching efforts based on CVSS score and asset criticality. Created a risk matrix and presented a 6-month remediation roadmap to management.</p>
+            <div class="csa-project-links">
+                <a href="[Link to Remediation Plan]" target="_blank">View Remediation Plan</a>
+            </div>
+        </div>
+
+        <div class="csa-project-card">
+            <h3>Automated Log Parser (Python)</h3>
+            <p>Developed a Python script using regex to parse Apache access logs, automatically flagging suspicious request patterns indicative of brute-force attacks or SQL injection attempts. Script linked below.</p>
+            <div class="csa-project-links">
+                <a href="[Link to Python Script on GitHub]" target="_blank">GitHub Script</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact" class="csa-footer">
+        <p>:: CONTACT ::</p>
+        <div class="social-links">
+            <a href="[LinkedIn URL]" target="_blank">LinkedIn</a> | 
+            <a href="[GitHub URL]" target="_blank">GitHub</a> | 
+            <a href="mailto:your.email@example.com">Email</a>
+        </div>
+        
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const greetingElement = document.getElementById('dynamicGreeting');
+            const date = new Date();
+            const hour = date.getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = 'Good morning!';
+            } else if (hour < 18) {
+                greeting = 'Good afternoon!';
+            } else {
+                greeting = 'Good evening!';
+            }
+
+            if (greetingElement) {
+                greetingElement.textContent = greeting;
+            }
+        });
+    </script>
+</body>
+</html>
